@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #FFFFFF;
+  --blush: #F0D5D9;
+  --rose: #C4788A;
+  --burgundy: #7D2E46;
+  --navy: #1C2B45;
+  --chocolate: #1C2B45;
+  --muted: #5A6478;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--chocolate);
+  font-family: var(--font-dm), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SVG path draw animation ── */
+@keyframes drawPath {
+  from { stroke-dashoffset: 2400; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes drawPathShort {
+  from { stroke-dashoffset: 800; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.stitch-path {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  animation: drawPath 3.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.stitch-path-short {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawPathShort 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Entry animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.anim-fade-up   { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+.anim-fade-in   { animation: fadeIn 1s ease forwards;   opacity: 0; }
+.anim-scale-in  { animation: scaleIn 0.7s ease forwards; opacity: 0; }
+
+/* Staggered delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-1200 { animation-delay: 1.2s; }
+.delay-1500 { animation-delay: 1.5s; }
+
+/* ── Portfolio grid items ── */
+@keyframes liftCard {
+  to { transform: translateY(-6px) rotate(0.5deg); }
+}
+
+.portfolio-card {
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.portfolio-card:hover {
+  box-shadow: 0 8px 32px rgba(28, 43, 69, 0.14);
+}
+
+/* Slide-up info panel */
+.card-slide {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.1rem 1.25rem;
+  background: linear-gradient(to top, rgba(28,43,69,0.93) 0%, rgba(28,43,69,0.55) 100%);
+  transform: translateY(100%);
+  transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-card:hover .card-slide {
+  transform: translateY(0);
+}
+
+/* ── Running stitch divider ── */
+.stitch-divider {
+  width: 100%;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--rose) 0px,
+    var(--rose) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  opacity: 0.4;
+}
+
+/* ── Form focus style ── */
+.form-field {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #DBC9C2;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.25s ease;
+  font-family: var(--font-dm), system-ui, sans-serif;
+}
+.form-field:focus {
+  border-bottom-color: var(--burgundy);
+}
+.form-field::placeholder {
+  color: var(--muted);
+}
+
+/* ── Grain texture overlay ── */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.45;
+}
+
+/* ── Modal ── */
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.91) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-backdrop {
+  animation: backdropIn 0.22s ease forwards;
+}
+.modal-card {
+  animation: modalIn 0.32s cubic-bezier(0.34, 1.15, 0.64, 1) forwards;
+}
+.modal-close {
+  width: 2.2rem; height: 2.2rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: white;
+  color: var(--chocolate);
+  font-size: 1.25rem;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(28,43,69,0.15);
+}
+.modal-close:hover {
+  background: var(--burgundy);
+  color: white;
+}
+
+/* ── Mobile Nav ── */
+@keyframes mobileNavIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes mobileNavLinkIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mobile-nav {
+  animation: mobileNavIn 0.22s ease forwards;
+}
+.mobile-nav-link {
+  opacity: 0;
+  animation: mobileNavLinkIn 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Cart Drawer ── */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+.cart-drawer {
+  animation: slideInRight 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose); }
+
+/* ── Selection ── */
+::selection { background: var(--blush); color: var(--burgundy); }
+
+/* ── Nav glass ── */
+.nav-glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(196, 120, 138, 0.15);
+}
+
+/* ── Button ── */
+.btn-primary {
+  background: var(--burgundy);
+  color: var(--cream);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.9rem 2.2rem;
+  border: 2px solid var(--burgundy);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  font-family: var(--font-dm), system-ui, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--burgundy);
+}
+
+/* Button on dark bg — starts transparent/outlined, fills with rose on hover */
+.btn-cta-fill {
+  background: transparent;
+  color: var(--cream);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.9rem 2.2rem;
+  border: 2px solid rgba(240, 213, 217, 0.5);
+  font-family: var(--font-dm), system-ui, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.btn-cta-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--rose);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+.btn-cta-fill:hover::before {
+  transform: translateY(0);
+}
+.btn-cta-fill:hover {
+  border-color: var(--rose);
+}
+.btn-cta-fill span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--burgundy);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.9rem 2.2rem;
+  border: 2px solid var(--burgundy);
+  transition: background 0.25s ease, color 0.25s ease;
+  font-family: var(--font-dm), system-ui, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background: var(--burgundy);
+  color: var(--cream);
+}
