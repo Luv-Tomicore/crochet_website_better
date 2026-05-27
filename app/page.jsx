@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 /* ─── Hero preview — diverse mix, no overlap with portfolio ─── */
 const heroItems = [
-  { id: 'h0', label: 'Black Tote Bag',       category: 'Bags',                  bg: '#1E1E1E', src: '/images/black-tote-bag.jpg',       price: '$20', contain: true  },
-  { id: 'h1', label: 'Bee',                  category: 'Plushies',              bg: '#FFF3C4', src: '/images/bee.png',                  price: '$8'  },
-  { id: 'h2', label: 'Bikini Bag Pink',       category: 'Bags',                  bg: '#F0D8E4', src: '/images/bikini-bag-pink.jpg',       price: '$20', contain: true  },
-  { id: 'h3', label: 'Crochet Flower',        category: 'Accessories & Flowers', bg: '#F0E8D0', src: '/images/flower.jpg',               price: '$25', contain: true  },
+  { id: 'h0', label: 'Black Seashell Bag',       category: 'Bags',                  bg: '#1E1E1E', src: '/images/black-tote-bag.jpg',       price: '$40', contain: true  },
+  { id: 'h1', label: 'Happy Bee',                  category: 'Plushies',              bg: '#FFF3C4', src: '/images/bee.png',                  price: '$8'  },
+  { id: 'h2', label: 'Bikini Bag Pink',       category: 'Bags',                  bg: '#F0D8E4', src: '/images/bikini-bag-pink.jpg',       price: '$15', contain: true  },
+  { id: 'h3', label: 'Rose Boquet',        category: 'Accessories & Flowers', bg: '#F0E8D0', src: '/images/flower.jpg',               price: '$25', contain: true  },
   { id: 'h4', label: 'Dino',                  category: 'Plushies',              bg: '#D4EDD8', src: '/images/dino.jpg',                 price: '$25' },
 ]
 
@@ -17,8 +17,8 @@ const portfolioItems = [
   { id: 2, label: 'Spring Pals Teal',        category: 'Keychains & Lanyards',  bg: '#CDE0DA', src: '/images/IMG_1764.jpeg',            price: '$8'  },
   { id: 3, label: 'Teddy Bear',              category: 'Plushies',              bg: '#EDE0D4', src: '/images/teddy.jpg',               price: '$25' },
   { id: 4, label: 'Watermelon Keychain',     category: 'Keychains & Lanyards',  bg: '#F0E0DC', src: '/images/IMG_1788.jpeg',            price: '$8'  },
-  { id: 5, label: 'Drink Plushie',           category: 'Plushies',              bg: '#D4EAF0', src: '/images/drink-plushie.jpg',        price: '$25' },
-  { id: 6, label: 'Bikini Bag Blue Cyan',    category: 'Bags',                  bg: '#C8E8EE', src: '/images/bikini-bag-blue-cyan.jpg',  price: '$20', contain: true  },
+  { id: 5, label: 'Piña Colada',           category: 'Plushies',              bg: '#D4EAF0', src: '/images/drink-plushie.jpg',        price: '$25' },
+  { id: 6, label: 'Bikini Bag Blue/Cyan',    category: 'Bags',                  bg: '#C8E8EE', src: '/images/bikini-bag-blue-cyan.jpg',  price: '$15', contain: true  },
   { id: 7, label: 'Cherry Berry',            category: 'Keychains & Lanyards',  bg: '#ECD8D4', src: '/images/IMG_1747.jpeg',            price: '$8'  },
   { id: 8, label: 'Spring Pals Purple',      category: 'Keychains & Lanyards',  bg: '#D8D0E8', src: '/images/IMG_1728.jpeg',            price: '$8'  },
 ]

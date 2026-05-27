@@ -40,7 +40,7 @@ export async function POST(request) {
               New Order Request
             </p>
             <h1 style="font-size: 36px; font-style: italic; font-weight: 300; margin: 0; color: #2C1612; line-height: 1;">
-              Stitch It with Tomi
+              Stitch-It with Tomi
             </h1>
           </div>
 
