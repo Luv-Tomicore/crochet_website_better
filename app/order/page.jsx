@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const ITEM_TYPES = ['Keychain', 'Bag / Tote', 'Clothing / Top', 'Flowers', 'Other / Custom']
+const ITEM_TYPES = ['Keychain', 'Bags', 'Clothing ', 'Flowers', 'Other / Custom']
 const BUDGETS   = ['Under $20', '$20 – $50', '$50 – $100', '$100+', 'Not sure yet']
 const TIMELINES = ['ASAP', '1 – 2 weeks', '2 – 4 weeks', 'No rush (1–2 months)', 'Special occasion (tell me!)']
 

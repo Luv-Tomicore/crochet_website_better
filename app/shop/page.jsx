@@ -13,17 +13,17 @@ const shopItems = [
   { id: 's5',  label: 'Spring Pals Teal',    category: 'Keychains & Lanyards', bg: '#CDE0DA', src: '/images/IMG_1764.jpeg', price: '$8'  },
   { id: 's7',  label: 'Spring Pals Purple',  category: 'Keychains & Lanyards', bg: '#D8D0E8', src: '/images/IMG_1728.jpeg', price: '$8'  },
   // Bags
-  { id: 'b1',  label: 'Black Tote Bag',        category: 'Bags', bg: '#2C2C2C', src: '/images/black-tote-bag.jpg',       price: '$20', contain: true },
+  { id: 'b1',  label: 'Black Seashell Bag',        category: 'Bags', bg: '#2C2C2C', src: '/images/black-tote-bag.jpg',       price: '$20', contain: true },
   { id: 'b2',  label: 'Bikini Bag Blue White',  category: 'Bags', bg: '#D8E4F0', src: '/images/bikini-bag-blue-white.jpg', price: '$20', contain: true },
   { id: 'b3',  label: 'Bikini Bag Blue Cyan',   category: 'Bags', bg: '#C8E8EE', src: '/images/bikini-bag-blue-cyan.jpg',  price: '$20', contain: true },
   { id: 'b4',  label: 'Bikini Bag Pink',        category: 'Bags', bg: '#F0D8E4', src: '/images/bikini-bag-pink.jpg',       price: '$20', contain: true },
   // Accessories & Flowers
-  { id: 'f1',  label: 'Crochet Flower',   category: 'Accessories & Flowers', bg: '#F0E8D0', src: '/images/flower.jpg', price: '$25', contain: true },
+  { id: 'f1',  label: 'Rose Boquet',   category: 'Accessories & Flowers', bg: '#F0E8D0', src: '/images/flower.jpg', price: '$25', contain: true },
   // Plushies
   { id: 'p1',  label: 'Bee',              category: 'Plushies', bg: '#FFF3C4', src: '/images/bee.png',           price: '$8'  },
   { id: 'p2',  label: 'Bunny',            category: 'Plushies', bg: '#F0E0E8', src: '/images/bunny.jpg',         price: '$25' },
   { id: 'p3',  label: 'Teddy Bear',       category: 'Plushies', bg: '#EDE0D4', src: '/images/teddy.jpg',         price: '$25' },
-  { id: 'p4',  label: 'Drink Plushie',    category: 'Plushies', bg: '#D4EAF0', src: '/images/drink-plushie.jpg', price: '$25' },
+  { id: 'p4',  label: 'Piña colada',    category: 'Plushies', bg: '#D4EAF0', src: '/images/drink-plushie.jpg', price: '$25' },
   { id: 'p5',  label: 'Dino',             category: 'Plushies', bg: '#D4EDD8', src: '/images/dino.jpg',          price: '$25' },
 ]
 
